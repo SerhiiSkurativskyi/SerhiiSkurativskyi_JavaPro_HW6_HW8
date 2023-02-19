@@ -1,6 +1,7 @@
 package one;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
@@ -18,11 +19,7 @@ public class First {
     }
 
     public static <T> List<T> toList(T[] sourceArray) {
-        List<T> targetList = new ArrayList<>();
-        for (T element : sourceArray) {
-            targetList.add(element);
-        }
-        return targetList;
+        return new ArrayList<>(Arrays.asList(sourceArray));
     }
 
     public List<Integer> findUnique(ArrayList<Integer> arrayList) {
