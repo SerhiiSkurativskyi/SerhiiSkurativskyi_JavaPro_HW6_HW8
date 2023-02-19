@@ -8,7 +8,7 @@ import java.util.Objects;
 public class First {
 
 
-    public int countOccurrence(ArrayList<String> arrayList, String string) {
+    public int countOccurrence(List<String> arrayList, String string) {
         int count = 0;
         for (String counter : arrayList) {
             if (counter.equals(string)) {
@@ -22,34 +22,43 @@ public class First {
         return new ArrayList<>(Arrays.asList(sourceArray));
     }
 
-    public List<Integer> findUnique(ArrayList<Integer> arrayList) {
+    public List<Integer> findUnique(List<Integer> arrayList) {
+        List<Integer> resultList = new ArrayList<>();
         for (int i = 0; i < arrayList.size(); i++) {
-            for (int y = 0; y < arrayList.size(); y++) {
-                if (y != i && Objects.equals(arrayList.get(y), arrayList.get(i))) {
-                    arrayList.remove(y);
+            for (Integer integer : arrayList) {
+                if (!resultList.contains(integer) && Objects.equals(integer, arrayList.get(i))) {
+                    resultList.add(integer);
                 }
             }
-        }
-        return arrayList;
-    }
-
-
-    public List<String> calcOccurrence(ArrayList<String> arrayList) {
-        ArrayList<String> resultList = new ArrayList<>();
-        for (int i = 0; i < arrayList.size(); i++) {
-            int count = 0;
-            for (int y = arrayList.size() - 1; y >= 0; y--) {
-                if (y != i && Objects.equals(arrayList.get(y), arrayList.get(i))) {
-                    count++;
-                    arrayList.remove(y);
-                }
-            }
-            resultList.add(arrayList.get(i) + ":" + " " + (count + 1));
         }
         return resultList;
     }
 
-    public List<FindOccurrence> findOccurrence(ArrayList<String> arrayList) {
+
+    public List<String> calcOccurrence(List<String> arrayList) {
+        List<String> resultList = new ArrayList<>();
+        for (String arrayListString1 : arrayList) {
+            boolean alreadyContains = false;
+            for (String result : resultList) {
+                if (result.startsWith(arrayListString1)) {
+                    alreadyContains = true;
+                    break;
+                }
+            }
+            if (!alreadyContains) {
+                int count = 0;
+                for (String arrayListString2 : arrayList) {
+                    if (arrayListString2.equals(arrayListString1)) {
+                        count++;
+                    }
+                }
+                resultList.add(arrayListString1 + ": " + count);
+            }
+        }
+        return resultList;
+    }
+
+    public List<FindOccurrence> findOccurrence(List<String> arrayList) {
         List<FindOccurrence> resultList = new ArrayList<>();
         for (int i = 0; i < arrayList.size(); i++) {
             int count = 0;

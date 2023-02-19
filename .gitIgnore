@@ -1,6 +1,2 @@
-build/
-.gradle/
-gradle/wrapper/
+
 .idea/
-*.iml
-*.log

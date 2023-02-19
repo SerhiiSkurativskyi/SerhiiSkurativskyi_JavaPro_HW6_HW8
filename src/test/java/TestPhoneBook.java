@@ -1,8 +1,7 @@
-package phonebook;
-
-
+import org.junit.jupiter.api.Test;
 import org.testng.Assert;
-import org.testng.annotations.Test;
+import phonebook.PhoneBook;
+import phonebook.Record;
 
 public class TestPhoneBook {
     @Test
