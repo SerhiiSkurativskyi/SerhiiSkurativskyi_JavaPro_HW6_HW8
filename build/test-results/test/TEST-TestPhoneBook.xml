@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestPhoneBook" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-02-19T23:20:55" hostname="DESKTOP-RIJSBIQ" time="0.025">
-  <properties/>
-  <testcase name="testFind()" classname="TestPhoneBook" time="0.025"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
