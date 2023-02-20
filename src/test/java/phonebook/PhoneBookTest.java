@@ -1,8 +1,7 @@
 package phonebook;
 
 import org.junit.jupiter.api.Test;
-
-import static org.testng.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PhoneBookTest {
     @Test
@@ -31,8 +30,8 @@ public class PhoneBookTest {
         newPerson.add(new Record("John Shelby", "+380979874521"));
         newPerson.add(new Record("Tommy Shelby", "+380978549787"));
 
-        assertEquals(newPerson.findAll("Tommy Shelby").get(0).getPhoneNumber(), "+380979839855");
-        assertEquals(newPerson.findAll("Tommy Shelby").get(1).getPhoneNumber(), "+380976548964");
-        assertEquals(newPerson.findAll("Tommy Shelby").get(2).getPhoneNumber(), "+380978549787");
+        assertEquals("+380979839855", newPerson.findAll("Tommy Shelby").get(0).getPhoneNumber());
+        assertEquals("+380976548964", newPerson.findAll("Tommy Shelby").get(1).getPhoneNumber());
+        assertEquals("+380978549787", newPerson.findAll("Tommy Shelby").get(2).getPhoneNumber());
     }
 }

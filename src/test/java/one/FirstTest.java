@@ -1,35 +1,22 @@
 package one;
-import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.testng.Assert.assertEquals;
-
+import org.junit.jupiter.api.Test;
 
 public class FirstTest {
 
     @Test
     public void testCountOccurrence() {
         First first = new First();
-        List<String> sourceList = new ArrayList<>();
-        sourceList.add("bot");
-        sourceList.add("target");
-        sourceList.add("boy");
-        sourceList.add("man");
-        sourceList.add("target");
-        sourceList.add("cat");
-        sourceList.add("hat");
-        sourceList.add("map");
-        sourceList.add("man");
-        sourceList.add("target");
-        sourceList.add("dog");
-        sourceList.add("boy");
-        sourceList.add("top");
+        List<String> sourceList = Arrays.asList("bot", "target", "boy", "man", "target", "cat", "hat", "map", "man", "target", "dog", "boy", "top");
         String sourceString = "target";
         assertEquals(3, first.countOccurrence(sourceList, sourceString));
     }
-
 
     @Test
     public void testToList() {
@@ -42,8 +29,8 @@ public class FirstTest {
         String[] stringArray = {"bot", "boy", "cat", "hat", "map", "dry", "top", "man"};
         List<String> targetList = First.toList(stringArray);
         assertEquals(targetList.size(), 8);
-        assertEquals(targetList.get(0), String.valueOf("bot"));
-        assertEquals(targetList.get(4), String.valueOf("map"));
+        assertEquals(targetList.get(0), "bot");
+        assertEquals(targetList.get(4), "map");
     }
 
     @Test
