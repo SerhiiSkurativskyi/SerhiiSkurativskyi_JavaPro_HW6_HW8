@@ -3,8 +3,8 @@ package phonebook;
 import java.util.ArrayList;
 import java.util.List;
 
-    public class PhoneBook {
-        private final List<Record> records;
+public class PhoneBook {
+    private final List<Record> records;
 
         public PhoneBook() {
             this.records = new ArrayList<>();
